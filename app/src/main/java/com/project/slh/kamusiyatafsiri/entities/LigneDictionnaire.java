@@ -1,31 +1,34 @@
 package com.project.slh.kamusiyatafsiri.entities;
 
-public class dictionnaire {
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Embedded;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.PrimaryKey;
+import android.arch.persistence.room.Relation;
 
-    private String mot_fr;
+@Entity (tableName = "Dictionnaires", foreignKeys = {@ForeignKey(entity = Utilisateur.class, parentColumns = "cleDico", childColumns = "id_utilisateur"),
+@ForeignKey(entity = Statut.class, parentColumns = "cleDico", childColumns = "id_statut")})
+public class LigneDictionnaire {
 
+    @Embedded
+    private CleDico cleDico;
+
+    @ColumnInfo(name = "mot_ang")
     private String mot_ang;
 
-    private String mot_com;
-
+    @ColumnInfo(name = "mot_ndz")
     private String mot_ndz;
 
+    @ColumnInfo(name = "mot_mwa")
     private String mot_mwa;
 
+    @ColumnInfo(name = "mot_mao")
     private String mot_mao;
-
 
     private Utilisateur utilisateur;
 
     private Statut statut;
-
-    public String getMot_fr() {
-        return mot_fr;
-    }
-
-    public void setMot_fr(String mot_fr) {
-        this.mot_fr = mot_fr;
-    }
 
     public String getMot_ang() {
         return mot_ang;
@@ -33,14 +36,6 @@ public class dictionnaire {
 
     public void setMot_ang(String mot_ang) {
         this.mot_ang = mot_ang;
-    }
-
-    public String getMot_com() {
-        return mot_com;
-    }
-
-    public void setMot_com(String mot_com) {
-        this.mot_com = mot_com;
     }
 
     public String getMot_ndz() {
@@ -83,12 +78,19 @@ public class dictionnaire {
         this.statut = statut;
     }
 
+    public CleDico getCleDico() {
+        return cleDico;
+    }
+
+    public void setCleDico(CleDico cleDico) {
+        this.cleDico = cleDico;
+    }
+
     @Override
     public String toString() {
-        return "dictionnaire{" +
-                "mot_fr='" + mot_fr + '\'' +
+        return "LigneDictionnaire{" +
+                "cleDico=" + cleDico +
                 ", mot_ang='" + mot_ang + '\'' +
-                ", mot_com='" + mot_com + '\'' +
                 ", mot_ndz='" + mot_ndz + '\'' +
                 ", mot_mwa='" + mot_mwa + '\'' +
                 ", mot_mao='" + mot_mao + '\'' +

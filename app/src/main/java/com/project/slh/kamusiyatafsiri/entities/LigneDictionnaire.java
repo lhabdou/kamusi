@@ -4,11 +4,9 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Embedded;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
-import android.arch.persistence.room.PrimaryKey;
-import android.arch.persistence.room.Relation;
 
-@Entity (tableName = "Dictionnaires", foreignKeys = {@ForeignKey(entity = Utilisateur.class, parentColumns = "cleDico", childColumns = "id_utilisateur"),
-@ForeignKey(entity = Statut.class, parentColumns = "cleDico", childColumns = "id_statut")})
+@Entity(tableName = "Dictionnaires", foreignKeys = {@ForeignKey(entity = Utilisateur.class, parentColumns = "cleDico", childColumns = "id_utilisateur"),
+        @ForeignKey(entity = Statut.class, parentColumns = "cleDico", childColumns = "id_statut")})
 public class LigneDictionnaire {
 
     @Embedded
@@ -26,8 +24,10 @@ public class LigneDictionnaire {
     @ColumnInfo(name = "mot_mao")
     private String mot_mao;
 
+    @ColumnInfo(name = "id_utilisateur")
     private Utilisateur utilisateur;
 
+    @ColumnInfo(name = "id_statut")
     private Statut statut;
 
     public String getMot_ang() {

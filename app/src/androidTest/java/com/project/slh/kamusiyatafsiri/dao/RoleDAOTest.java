@@ -13,7 +13,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,14 +37,16 @@ public class RoleDAOTest {
     }
 
     @Test
-    public void writeRoleAndReadInList() throws Exception {
+    public void writeRoleAndReadInListTest() {
         Role role = new Role();
         role.setId(1);
         role.setNom_role("Admin");
         List<Role> roles = new ArrayList<>();
+        roles.add(role);
+
         roleDAO.ajouterRole(roles);
 
         List<Role> rolesResult = roleDAO.selectionnerLesRoles();
-       Assert.assertSame(rolesResult.get(0),role);
+        Assert.assertEquals(rolesResult.get(0), role);
     }
 }

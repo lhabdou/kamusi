@@ -23,7 +23,7 @@ public interface RoleDAO {
      * @param role L'identifiant du role à supprimer
      */
     @Delete
-    public void supprimer(Role role);
+    public void supprimerRole(Role role);
 
     /**
      * @param role le role modifié
@@ -32,7 +32,7 @@ public interface RoleDAO {
     public void modifierRole(Role role);
 
     /**
-     * Récupération de toutes les rôles
+     * Récupération de tous les rôles
      */
     @Query("SELECT * FROM Roles")
     public List<Role> selectionnerLesRoles();

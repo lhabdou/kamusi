@@ -12,7 +12,7 @@ import com.project.slh.kamusiyatafsiri.entities.Role;
 import com.project.slh.kamusiyatafsiri.entities.Statut;
 import com.project.slh.kamusiyatafsiri.entities.Utilisateur;
 
-@Database(entities = {Role.class, Statut.class, Utilisateur.class, LigneDictionnaire.class}, version = 1)
+@Database(entities = {LigneDictionnaire.class, Utilisateur.class, Statut.class, Role.class}, version = 1)
 public abstract class DAOBase extends RoomDatabase{
 
     public abstract RoleDAO roleDAO();

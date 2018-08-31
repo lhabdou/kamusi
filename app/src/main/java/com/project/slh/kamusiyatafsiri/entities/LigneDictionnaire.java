@@ -1,16 +1,20 @@
 package com.project.slh.kamusiyatafsiri.entities;
 
 import android.arch.persistence.room.ColumnInfo;
-import android.arch.persistence.room.Embedded;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Index;
+import android.support.annotation.NonNull;
 
-@Entity(tableName = "Dictionnaires", foreignKeys = {@ForeignKey(entity = Utilisateur.class, parentColumns = "cleDico", childColumns = "id_utilisateur"),
-        @ForeignKey(entity = Statut.class, parentColumns = "cleDico", childColumns = "id_statut")})
+@Entity(primaryKeys = {"mot_fr","mot_com"},tableName = "Dictionnaires",
+        foreignKeys = {@ForeignKey(entity = Utilisateur.class, parentColumns = "id_utilisateur", childColumns = "id_utilisateur"),
+        @ForeignKey(entity = Statut.class, parentColumns = "id_statut", childColumns = "id_statut")},
+indices = {@Index(value = "id_statut", unique = true), @Index(value = "id_utilisateur",unique = true)})
 public class LigneDictionnaire {
-
-    @Embedded
-    private CleDico cleDico;
+    @NonNull
+    private String mot_fr;
+    @NonNull
+    private String mot_com;
 
     @ColumnInfo(name = "mot_ang")
     private String mot_ang;
@@ -25,10 +29,10 @@ public class LigneDictionnaire {
     private String mot_mao;
 
     @ColumnInfo(name = "id_utilisateur")
-    private Utilisateur utilisateur;
+    private Integer id_utilisateur;
 
     @ColumnInfo(name = "id_statut")
-    private Statut statut;
+    private Integer id_statut;
 
     public String getMot_ang() {
         return mot_ang;
@@ -62,40 +66,36 @@ public class LigneDictionnaire {
         this.mot_mao = mot_mao;
     }
 
-    public Utilisateur getUtilisateur() {
-        return utilisateur;
+
+    public Integer getId_utilisateur() {
+        return id_utilisateur;
     }
 
-    public void setUtilisateur(Utilisateur utilisateur) {
-        this.utilisateur = utilisateur;
+    public void setId_utilisateur(Integer id_utilisateur) {
+        this.id_utilisateur = id_utilisateur;
     }
 
-    public Statut getStatut() {
-        return statut;
+    public Integer getId_statut() {
+        return id_statut;
     }
 
-    public void setStatut(Statut statut) {
-        this.statut = statut;
+    public void setId_statut(Integer id_statut) {
+        this.id_statut = id_statut;
     }
 
-    public CleDico getCleDico() {
-        return cleDico;
+    public String getMot_fr() {
+        return mot_fr;
     }
 
-    public void setCleDico(CleDico cleDico) {
-        this.cleDico = cleDico;
+    public void setMot_fr(String mot_fr) {
+        this.mot_fr = mot_fr;
     }
 
-    @Override
-    public String toString() {
-        return "LigneDictionnaire{" +
-                "cleDico=" + cleDico +
-                ", mot_ang='" + mot_ang + '\'' +
-                ", mot_ndz='" + mot_ndz + '\'' +
-                ", mot_mwa='" + mot_mwa + '\'' +
-                ", mot_mao='" + mot_mao + '\'' +
-                ", utilisateur=" + utilisateur +
-                ", statut=" + statut +
-                '}';
+    public String getMot_com() {
+        return mot_com;
+    }
+
+    public void setMot_com(String mot_com) {
+        this.mot_com = mot_com;
     }
 }

@@ -1,5 +1,6 @@
 package com.project.slh.kamusiyatafsiri.dao;
 
+import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
@@ -17,7 +18,7 @@ public interface RoleDAO {
      * @param roles le(s) role(s) à ajouter à la base
      */
     @Insert
-    public void ajouterRole(List<Role> roles);
+    public void ajouterRole(Role role);
 
     /**
      * @param role L'identifiant du role à supprimer
@@ -35,7 +36,7 @@ public interface RoleDAO {
      * Récupération de tous les rôles
      */
     @Query("SELECT * FROM Roles")
-    public List<Role> selectionnerLesRoles();
+    public LiveData<List<Role>> selectionnerLesRoles();
 
 
 }

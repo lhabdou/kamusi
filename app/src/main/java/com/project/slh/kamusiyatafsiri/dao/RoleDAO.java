@@ -15,10 +15,16 @@ import java.util.List;
 public interface RoleDAO {
 
     /**
-     * @param roles le(s) role(s) à ajouter à la base
+     * @param role un role à ajouter à la base
      */
     @Insert
     public void ajouterRole(Role role);
+
+    /**
+     * @param roles les roles à ajouter à la base
+     */
+    @Insert
+    public void ajouterRole(List<Role> roles);
 
     /**
      * @param role L'identifiant du role à supprimer

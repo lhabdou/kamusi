@@ -9,4 +9,24 @@
     <string name="action_settings">Paramètres</string>
     <string name="textRechercher">Tsaha</string>
     <string name="textRechercherChamps">Recherche</string>
+    <string name="hint_role">Role...</string>
+    <string name="button_ajouter">Ajouter</string>
+    <string name="empty_not_saved">Role not saved because it is empty.</string>
+    <string name="fr_ndz">FR/NDZ</string>
+    <string name="fr_mwa">FR/MWA</string>
+    <string name="fr_mao">FR/MAO</string>
+    <string name="fr_ngz">FR/NGZ</string>
+    <string name="ang_ngz">ANG/NGZ</string>
+
+    <string name="mots_fr">Français</string>
+    <string name="mots_ngz">Shi Ngazidja</string>
+    <string name="mots_ndz">Shi Ndzuani</string>
+    <string name="mots_mwa">Shi Mwali</string>
+    <string name="mots_mao">Shi Maore</string>
+    <string name="mots_ang">English</string>
+
+    <string name="id_role">Id</string>
+    <string name="nom_role">Role</string>
+
+    <string name="langues">Langues</string>
 </resources>

@@ -1,27 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".DictionnaireActivity">
+
+    <RadioGroup
+        android:id="@+id/groupeFR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/langues"
+            android:layout_gravity="center"/>
+
+        <RadioButton
+            android:id="@+id/fr_ngz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_padding"
+            android:checked="true"
+            android:text="@string/fr_ngz" />
+
+        <RadioButton
+            android:id="@+id/fr_ndz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_padding"
+            android:text="@string/fr_ndz" />
+
+        <RadioButton
+            android:id="@+id/fr_nwa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_padding"
+            android:text="@string/fr_mwa" />
+
+        <RadioButton
+            android:id="@+id/fr_mao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_padding"
+            android:text="@string/fr_mao" />
+
+        <RadioButton
+            android:id="@+id/ang_ngz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_padding"
+            android:text="@string/ang_ngz"/>
+    </RadioGroup>
+
 
     <EditText
         android:id="@+id/motCle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/big_padding"
+        android:layout_marginTop="@dimen/big_padding"
+        android:gravity="center_horizontal"
         android:hint="@string/textRechercherChamps"
-        android:singleLine="true"
-        android:gravity="center_horizontal"/>
+        android:singleLine="true" />
+
     <Button
         android:id="@+id/boutonChercher"
-        android:layout_width="wrap_content"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/buttonLabel"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/textRechercher"
-         />
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:text="@string/textRechercher"/>
+
     <TextView
         android:id="@+id/resultTxt"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"/>
 
-</android.support.constraint.ConstraintLayout>
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:textAlignment="center">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/small_padding">
+
+            <TextView
+                android:padding="@dimen/med_padding"
+                android:text="@string/mots_fr"/>
+
+            <TextView
+                android:padding="@dimen/med_padding"
+                android:text="@string/mots_ngz"/>
+
+            <TextView
+                android:padding="@dimen/med_padding"
+                android:text="@string/mots_ndz"/>
+
+            <TextView
+                android:padding="@dimen/med_padding"
+                android:text="@string/mots_mwa" />
+
+            <TextView
+                android:padding="@dimen/small_padding"
+                android:text="@string/mots_mao" />
+
+            <TextView
+                android:padding="@dimen/small_padding"
+                android:text="@string/mots_ang" />
+        </TableRow>
+
+        <View
+            android:layout_height="2dip"
+            android:background="#FF0000" />
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/small_padding">
+
+            <TextView
+                android:padding="@dimen/small_padding"
+                android:text="default" />
+
+            <TextView
+                android:padding="@dimen/small_padding"
+                android:text="default" />
+
+            <TextView
+                android:padding="@dimen/small_padding"
+                android:text="default" />
+
+            <TextView
+                android:padding="@dimen/small_padding"
+                android:text="default" />
+
+            <TextView
+                android:padding="@dimen/small_padding"
+                android:text="default" />
+
+            <TextView
+                android:padding="@dimen/small_padding"
+                android:text="default" />
+            <Button
+                android:id="@+id/bUpdateRole"
+                style="@style/frag1Col"
+                android:clickable="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Proposer"/>
+
+        </TableRow>
+
+
+    </TableLayout>
+
+</LinearLayout>

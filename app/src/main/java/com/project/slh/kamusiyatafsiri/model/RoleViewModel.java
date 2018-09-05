@@ -23,7 +23,7 @@ public class RoleViewModel extends AndroidViewModel {
 
     }
 
-    LiveData<List<Role>> getAllRoles() { return allRoles; }
+    public LiveData<List<Role>> getAllRoles() { return allRoles; }
 
     public void insertRole(Role role) {
         dictionnaireRepository.insert(role);

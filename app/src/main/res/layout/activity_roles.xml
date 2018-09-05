@@ -3,13 +3,95 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".RolesActivity">
 
-    <TextView
-        android:id="@+id/role_text1"
-        style="@style/role_title"
+    <EditText
+        android:id="@+id/edit_motCle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_orange_light" />
+        android:layout_marginBottom="@dimen/big_padding"
+        android:layout_marginTop="@dimen/big_padding"
+        android:fontFamily="sans-serif-light"
+        android:hint="@string/hint_role"
+        android:inputType="textAutoComplete"
+        android:padding="@dimen/small_padding"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/buttonTsahaRole"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="@string/button_ajouter"
+        android:textColor="@color/buttonLabel" />
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        style="@style/frag1TableLayout"
+        android:layout_height="fill_parent"
+        android:textAlignment="center">
+
+        <TableRow
+            style="@style/frag1HeaderTableRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/big_padding">
+
+            <TextView
+                style="@style/frag1HeaderCol"
+                android:layout_margin="@dimen/fab_margin"
+                android:padding="@dimen/big_padding"
+                android:text="@string/id_role" />
+
+            <TextView
+                style="@style/frag1HeaderCol"
+                android:layout_margin="@dimen/fab_margin"
+                android:padding="@dimen/big_padding"
+                android:text="@string/nom_role" />
+        </TableRow>
+
+        <View
+            android:layout_height="2dip"
+            android:background="#FF0000" />
+
+
+        <TableRow
+            android:id="@+id/row_"
+            style="@style/frag1Col"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/big_padding">
+
+            <TextView
+                android:id="@+id/idValue"
+                style="@style/frag1Col"
+                android:padding="@dimen/big_padding"
+                android:text="Default" />
+
+            <EditText
+                android:id="@+id/roleValue"
+                style="@style/frag1Col"
+                android:padding="@dimen/big_padding"
+                android:text="Default" />
+
+            <Button
+                android:id="@+id/bUpdateRole"
+                style="@style/frag1Col"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save"/>
+
+            <Button
+                android:id="@+id/bDeleteRole"
+                style="@style/frag1Col"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="X"/>
+
+        </TableRow>
+
+
+    </TableLayout>
 
 </LinearLayout>

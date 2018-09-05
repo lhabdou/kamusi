@@ -21,7 +21,8 @@
         </activity>
         <activity android:name=".RolesActivity" />
         <activity android:name=".UtilisateursActivity" />
-        <activity android:name=".DictionnaireActivity" />
+        <activity android:name=".DictionnaireActivity"
+            android:screenOrientation="landscape"/>
         <activity android:name=".DomainesActivity" />
         <activity android:name=".ValidationActivity" />
         <activity android:name=".ExercicesActivity"></activity>
